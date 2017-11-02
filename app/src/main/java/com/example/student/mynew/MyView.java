@@ -31,16 +31,21 @@ public class MyView extends View {
     private void init(AttributeSet attrs, int defStyle) {
         img= BitmapFactory.decodeResource(getResources(),R.drawable.a);
     }
+
+
+    public  void mymove(float dx,float dy){
+        sx=(int) dx;
+        sy=(int)dy;
+    }
     Bitmap img;
-    int y=0;
-
-
+    int sy=0;
+    int sx=0;
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawColor(Color.YELLOW);
-        canvas.drawBitmap(img,y,0,null);
-        y=y+1;
+        canvas.drawBitmap(img,100+sx,100+sy,null);
+
 
     }
 
